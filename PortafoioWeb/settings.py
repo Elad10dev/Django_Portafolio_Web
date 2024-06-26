@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0oeg2ef#(%8i0#2p-0u*=21^u_hj8-q&k2ax(g&7ba!)w(hr99'
+SECRET_KEY = '090017288889django-insecure-0oeg2ef#(%8i0#2p-0u*=21^u_hj8-q&k2ax(g&7ba!)w(hr99'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    #Apps propias
+    'MainApp.apps.MainappConfig',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +57,7 @@ ROOT_URLCONF = 'PortafoioWeb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'MainApp' / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,10 +78,15 @@ WSGI_APPLICATION = 'PortafoioWeb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'PortafolioEladio',
+        'USER': 'postgres',
+        'PASSWORD': '159753.Eladio',
+        'HOST': 'localhost',  # o la IP de tu servidor PostgreSQL
+        'PORT': '5432',  # Puerto por defecto de PostgreSQL
     }
 }
+
 
 
 # Password validation
@@ -116,6 +124,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'MainApp' / 'static',
+]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
