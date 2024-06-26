@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'PortafoioWeb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'PortafolioEladio',
+        'NAME': 'PortafolioWebEladio',
         'USER': 'postgres',
         'PASSWORD': '159753.Eladio',
         'HOST': 'localhost',  # o la IP de tu servidor PostgreSQL
