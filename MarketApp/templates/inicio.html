@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Market{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'estilosmarket.css' %}">
+    </head>
+
+<body>
+  <div class="center">
+    <!--Menu-->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="{% url 'index' %}">
+          <p class="level-item has-text-centered is-size-3"><img class="img_subtitle" width="80px" height="80px" src="{% static 'img/OIG1_appweb1.jpg' %}" alt="logoec1"></p>
+        </a>
+      </div>
+      {% if request.user.is_authenticated %}
+        <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="{% url 'dashboard' %}">
+            <img class="img_subtitle" align-text="center" width="40px" height="40px" src="#" alt="logoec1"><br><p>Inicio</p>
+          </a>
+    
+          <a class="navbar-item" href="#">
+            <img class="img_subtitle" align-text="center" width="40px" height="40px" src="#" alt="logoec1"><br><p>Vitrina</p>
+          </a>
+          <a class="navbar-item" href="#">
+            <img class="img_subtitle" align-text="center" width="40px" height="40px" src="#" alt="logoec1"><br><p>Carrito</p>
+          </a>
+        </div>
+        {% if request.user.is_authenticated %}
+          <div class="navbar-end">
+            <div class="navbar-item" >
+              <a class="navbar-item" href="#">
+                <img class="img_subtitle" align-text="center" width="40px" height="40px" src="{% static 'img/dashboard.png' %}" alt="logoec1"><br><p>Cambiar contraseña</p>
+                </a>
+              <p>
+                
+            
+                Hello {{ request.user.first_name|default:request.user.username }}, 
+                <form action="#" method="post">
+                  {% csrf_token %}
+                  <button type="submit"><strong> Log out</strong>
+                  </button>
+                </form>
+                
+              </p>
+            </div>
+            
+          </div>
+          
+          
+      
+      
+      
+        {% endif %}
+        </div>
+      {% else  %}
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="{% url 'dashboard' %}">
+              <img class="img_subtitle" align-text="center" width="40px" height="40px" src="{% static 'img/dashboard.png' %}" alt="logoec1"><br><p>Inicio</p>
+            </a>
+      
+            <a class="navbar-item" href="#">
+              <img class="img_subtitle" align-text="center" width="40px" height="40px" src="{% static 'img/add.png' %}" alt="logoec1"><br><p>Registro</p>
+            </a>
+            <a class="navbar-item" href="#">
+              <img class="img_subtitle" align-text="center" width="40px" height="40px" src="{% static 'img/enter.png' %}" alt="logoec1"><br><p>Iniciar sesion</p>
+            </a>
+          </div>
+      {% endif %}
+       
+      
+      
+      
+    </nav>
+    <!--Fin Menu-->
+    {% block content %}
+    <!--zona del carrusel-->
+    <div class="carousel-container">
+   
+
+    <div class="carousel-slide">
+      <a href="#"><img src="{% static 'img/login1.jpg' %}" style="width:65%">
+      <button class="carousel-button left">Inicio de sesion</button></a>
+    </div>
+  
+    <div class="carousel-slide">
+      <a href="#"><img src="{% static 'img/Registrarse.jpg' %}" style="width:65%">
+      <button class="carousel-button left">Registrarse</button></a>
+    </div>
+  
+    <div class="carousel-slide">
+      <a href="#"><img src="{% static 'img/productos.jpg' %}" style="width:65%">
+      <button class="carousel-button left">Nuestros productos</button></a>
+    </div>
+    
+  
+    </div>
+    <!--fin de carrusel-->
+    
+    
+    <!--scripts de bootstrap-->
+      
+    
+    
+    <!--fin de bootstrap-->
+    
+  </div>
+  
+  <script src="{% static 'scriptmrkt.js' %}"></script>
+  {% endblock %}
+</body>
+
+</html>

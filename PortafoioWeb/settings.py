@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     
     #Apps propias
     'MainApp.apps.MainappConfig',
+    'MarketApp.apps.MarketappConfig',
 ]
 
 MIDDLEWARE = [
