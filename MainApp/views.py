@@ -4,3 +4,5 @@ from django.shortcuts import render
 def Index(request):
     '''Esto es la pàgina principal'''
     return render(request, 'index.html')
+
+

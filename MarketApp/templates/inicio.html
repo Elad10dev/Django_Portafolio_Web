@@ -21,21 +21,21 @@
         <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
           <a class="navbar-item" href="{% url 'dashboard' %}">
-            <img class="img_subtitle" align-text="center" width="40px" height="40px" src="#" alt="logoec1"><br><p>Inicio</p>
+            <img class="img_subtitle" align-text="center" width="40px" height="40px" src="{% static 'img/enter.png' %}" alt="logoec1"><br><p>Inicio</p>
           </a>
     
           <a class="navbar-item" href="#">
-            <img class="img_subtitle" align-text="center" width="40px" height="40px" src="#" alt="logoec1"><br><p>Vitrina</p>
+            <img class="img_subtitle" align-text="center" width="40px" height="40px" src="{% static 'img/glass.png' %}" alt="logoec1"><br><p>Vitrina</p>
           </a>
           <a class="navbar-item" href="#">
-            <img class="img_subtitle" align-text="center" width="40px" height="40px" src="#" alt="logoec1"><br><p>Carrito</p>
+            <img class="img_subtitle" align-text="center" width="40px" height="40px" src="{% static 'img/cart.png' %}" alt="logoec1"><br><p>Carrito</p>
           </a>
         </div>
         {% if request.user.is_authenticated %}
           <div class="navbar-end">
             <div class="navbar-item" >
               <a class="navbar-item" href="#">
-                <img class="img_subtitle" align-text="center" width="40px" height="40px" src="{% static 'img/dashboard.png' %}" alt="logoec1"><br><p>Cambiar contraseña</p>
+                <img class="img_subtitle" align-text="center" width="40px" height="40px" src="{% static 'img/dashboard.png' %}" alt="logoec1"><br><p>Cambiar <br> contraseña</p>
                 </a>
               <p>
                 
