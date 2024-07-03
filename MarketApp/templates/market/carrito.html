@@ -1,0 +1,50 @@
+{% extends "inicio.html" %}
+{% load static %}
+{% block title %}Carrito{% endblock %}
+{% block content %}
+
+{% for cart_item in item_cart %}
+  
+  <div class="card">
+    <div class="img">      
+      <div class="img_item">
+        <img src="{{ cart_item.item_id.image_url.url }}" alt="img_item">
+    </div>
+  </div>
+
+    <div class="text">
+      
+      <p class="h3">{{ cart_item.item_id.title }}</p>
+      <p class="p">{{ cart_item.item_id.description }}</p>
+      <p class="p">Cantidad: {{ cart_item.quantity }}</p>
+      <p class="p">Precio unitario: ${{ cart_item.item_id.price }}</p> 
+      <p class="p">Subtotal: ${{ cart_item.subtotal }}</p>      
+    
+      <div class="icon-box">
+        <!-- Asegúrate de tener una vista y URL para eliminar artículos del carrito -->
+        <a href="{% url 'eliminar_del_carrito' cart_item.id %}" class="btn btn-danger">Eliminar</a>
+      </div>
+    </div>
+  </div>
+  {% empty %}
+      <p>No tienes artículos en tu carrito.</p>
+  {% endfor %}
+  <div class="card">
+    <div class="img">      
+      <div class="img_item">
+        <img src="{% static 'img/cart.png' %}" alt="img_cart">
+    </div>
+  </div>
+
+    <div class="text">
+      
+      <p class="h3">Total a pagar: ${{ total_amount }}</p>
+            
+    
+    </div>
+  </div>
+  
+</div>
+
+
+{% endblock %}

@@ -19,6 +19,11 @@
       <p class="p">{{ i.description }}</p>
       <p class="p">${{ i.price }}</p>
 
+      <div class="icon-box">
+        <p class="span"><!-- Asegúrate de tener una vista y URL para agregar artículos al carrito -->
+          <a href="{% url 'agregar_al_carrito' i.item_id %}" class="btn btn-info">Agregar al Carrito</a></p>
+      </div>
+
      
     </div>
   </div>
