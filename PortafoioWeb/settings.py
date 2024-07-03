@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #Apps propias
     'MainApp.apps.MainappConfig',
     'MarketApp.apps.MarketappConfig',
+    'widget_tweaks'
 ]
 
 MIDDLEWARE = [
@@ -139,3 +140,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # settings.py
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#redireccionar el incio de sesion a dashboard
+
+LOGIN_REDIRECT_URL = 'dashboard'
+
+#redirect logout a logout.html
+
+LOGOUT_REDIRECT_URL = 'dashboard'

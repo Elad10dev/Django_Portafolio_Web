@@ -1,0 +1,44 @@
+{% extends "inicio.html" %}
+{% block title %}Create an account{% endblock %}
+
+
+{% block content %}
+  
+<form class="form" method="post">
+{% load widget_tweaks %}
+  <p class="title">Register </p>
+  <p class="message">Signup now and get full access to our app. </p>
+  <div class="flex">
+    <label>
+      {{ user_form.username.label_tag }} {% render_field user_form.username class+="input mt-2"%}
+      <span>Firstname</span>
+    </label>
+      
+    <!--<label>
+    <input required="" placeholder="" type="text" class="input">
+    <span>Lastname</span>
+    </label>-->
+  </div>  
+                  
+    <label>
+      {{ user_form.email.label_tag }} {% render_field user_form.email class+="input mt-2"%}
+      <span>Email</span>
+    </label> 
+              
+    <label>
+      {{ user_form.password.label_tag }} {% render_field user_form.password class+="input mt-2"%}
+      <span>Password</span>
+    </label>
+    <label>
+      {{ user_form.password2.label_tag }} {% render_field user_form.password2 class+="input mt-2"%}
+      <span>Confirm password</span>
+    </label>
+    
+    <input type="submit" value="Create my account" class="button mt-2 is-link">
+    <p class="signin">Already have an acount ? <a href="{% url 'login' %}">Signin</a> </p>
+    {% csrf_token %}
+  </form>
+
+       
+  {% endblock %}
+

@@ -1,0 +1,32 @@
+{% extends "inicio.html" %}
+{% block title %} Log-in {% endblock %}
+
+    {% block content %}
+    <div class="login-card">
+        <div class="card-header">
+          <h1>Log-in</h1>
+          {% if form.errors %}
+          <p>usuario y contraseña incorrecto</p>
+        {% else %}
+        <p>Por favor, use te following form to log-in</p>
+        {% endif %}
+        </div>
+        <div class="card-body">
+          <form action="{% url 'login' %}" method="post">
+            {% load widget_tweaks %}
+            {% for field in form %}
+                {{field.label_tag}}
+                {% render_field field class+="input mt-2" %}
+                {% endfor %}
+                {% csrf_token %}
+                
+            <div class="form-group">
+              <button type="submit" class="login-button"><input type="submit" value="Log-in" class="button mt-2">
+                <input type="hidden" name="text" value="{{ next }}"></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    
+   
+    {% endblock %}

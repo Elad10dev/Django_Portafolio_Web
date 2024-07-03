@@ -27,21 +27,21 @@
           <a class="navbar-item" href="{% url 'vitrina' %}">
             <img class="img_subtitle" align-text="center" width="40px" height="40px" src="{% static 'img/glass.png' %}" alt="logoec1"><br><p>Vitrina</p>
           </a>
-          <a class="navbar-item" href="#">
+          <a class="navbar-item" href="{% url 'carrito' %}">
             <img class="img_subtitle" align-text="center" width="40px" height="40px" src="{% static 'img/cart.png' %}" alt="logoec1"><br><p>Carrito</p>
           </a>
         </div>
         {% if request.user.is_authenticated %}
           <div class="navbar-end">
             <div class="navbar-item" >
-              <a class="navbar-item" href="#">
+              <a class="navbar-item" href="{% url 'password_change' %}">
                 <img class="img_subtitle" align-text="center" width="40px" height="40px" src="{% static 'img/dashboard.png' %}" alt="logoec1"><br><p>Cambiar <br> contraseña</p>
                 </a>
               <p>
                 
             
                 Hello {{ request.user.first_name|default:request.user.username }}, 
-                <form action="#" method="post">
+                <form action="{% url 'logout' %}" method="post">
                   {% csrf_token %}
                   <button type="submit"><strong> Log out</strong>
                   </button>
@@ -65,10 +65,10 @@
               <img class="img_subtitle" align-text="center" width="40px" height="40px" src="{% static 'img/dashboard.png' %}" alt="logoec1"><br><p>Inicio</p>
             </a>
       
-            <a class="navbar-item" href="#">
+            <a class="navbar-item" href="{% url 'register' %}">
               <img class="img_subtitle" align-text="center" width="40px" height="40px" src="{% static 'img/add.png' %}" alt="logoec1"><br><p>Registro</p>
             </a>
-            <a class="navbar-item" href="#">
+            <a class="navbar-item" href="{% url 'login' %}">
               <img class="img_subtitle" align-text="center" width="40px" height="40px" src="{% static 'img/enter.png' %}" alt="logoec1"><br><p>Iniciar sesion</p>
             </a>
           </div>
