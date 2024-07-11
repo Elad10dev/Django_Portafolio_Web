@@ -11,6 +11,7 @@ from    django.http import HttpResponse
 def Inicio(request):   
     return render(request, 'inicio.html',)
 
+
 def vitrina(request):
      items = ItemDB.objects.all()
      return render(request,

@@ -3,30 +3,30 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
 
 body  {
-    background-image: url("img/fondo.jpg");
-    background-size:contain;
-        -webkit-animation: slidein 100s;
-        animation: slidein 100s;
+  background-image: url("img/OIG4.P3.jpg");
+  background-size:contain;
+      -webkit-animation: slidein 100s;
+      animation: slidein 100s;
 
-        -webkit-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
 
-        -webkit-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
 
-        -webkit-animation-direction: alternate;
-        animation-direction: alternate;              
+      -webkit-animation-direction: alternate;
+      animation-direction: alternate;              
 }
 
 
 @-webkit-keyframes slidein {
-from {background-position: top; background-size:3000px; }
-to {background-position: -100px 0px;background-size:2750px;}
+from {background-position: top; background-size:1750px; }
+to {background-position: -100px 0px;background-size:1500px;}
 }
 
 @keyframes slidein {
-from {background-position: top;background-size:3000px; }
-to {background-position: -100px 0px;background-size:2750px;}
+from {background-position: top;background-size:1750px; }
+to {background-position: -100px 0px;background-size:1500px;}
 
 }
 
